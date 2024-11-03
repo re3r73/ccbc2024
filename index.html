@@ -47,9 +47,7 @@
             <li class="nav-link">
                 <a  id="showProgress" class="dropdown-item" href="#" data-toggle="modal" data-target="#userProfileModal">Mon score</a>
             </li>
-            <li class="nav-link">
-                <a  class="dropdown-item" href="#" data-toggle="modal" data-target="#resetModal">Reset</a>
-            </li>
+            
             <li class="nav-link">
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#aboutModal">A propos</a>
             </li>
@@ -94,7 +92,7 @@
 	    <div class="modal-content">
             <div class="modal-header">
                 <h2 class="modal-title" id="eventModalTitle">La douche</h2>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -129,7 +127,7 @@
             
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
                 <!--<button type="button" class="btn btn-primary" id="event_1_save">Save changes</button>-->
             
             </div>
@@ -147,7 +145,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="userProfileModalLabel">Mon score</h1>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -161,7 +159,10 @@
                 </div>  
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            <li class="nav-link">
+                <a  class="dropdown-item" href="#" data-toggle="modal" data-target="#resetModal">Remettre à zéro</a>
+            </li>
             </div>
         </div>
     </div>
@@ -174,7 +175,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="userProfileModalLabel">A propos</h1>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -187,7 +188,7 @@
                 </div>  
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
             </div>
         </div>
     </div>
@@ -200,7 +201,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="userProfileModalLabel">Réinitialiser les données</h1>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Annuler">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -212,7 +213,7 @@
                 </div>  
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
             <button id="resetConfirmButton" type="button" class="btn btn-secondary" data-dismiss="modal">Oui, efface mes données</button>
             </div>
         </div>
