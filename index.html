@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	
-	<title>CodePen - Weekly Challenge</title>
+	<title>CCBC 2024 - 31 défis sobriétés</title>
 	
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -42,44 +42,35 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-link">
-          <a  href="#">Home </a>
-        </li>
-        <li class="nav-link">
-              <a  id="showProgress" class="dropdown-item" href="#" data-toggle="modal" data-target="#userProfileModal">Mon score</a>
-        </li>
-        <li class="nav-link">
-            <a id="resetButton" class="dropdown-item" href="#">Reset</a>
-        </li>
-        <li class="nav-link">
-            <a class="dropdown-item" href="#">A propos</a>
-        </li>
-        <!--<li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown link
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            
-            
-            
-          </div>
-        </li>-->
-      </ul>
+        <ul class="navbar-nav">
+        
+            <li class="nav-link">
+                <a  id="showProgress" class="dropdown-item" href="#" data-toggle="modal" data-target="#userProfileModal">Mon score</a>
+            </li>
+            <li class="nav-link">
+                <a  class="dropdown-item" href="#" data-toggle="modal" data-target="#resetModal">Reset</a>
+            </li>
+            <li class="nav-link">
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#aboutModal">A propos</a>
+            </li>
+            <!--<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown link
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                
+                
+                
+            </div>
+            </li>-->
+        </ul>
     </div>
-  </nav>
-
-
- 
-
-
-
-
+</nav>
 
 
 <div id="title" class="center">
 	<h1>Décembre 2024</h1>
-	<p>On s'engage pour le climat à Billom !</a>
+	<h2>On s'engage pour le climat à Billom !</>
 </div>
 <!--
 <button id="remove_cookies" class="btncls">remove a Cookie event_1_opened</button>
@@ -139,7 +130,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="event_1_save">Save changes</button>
+                <!--<button type="button" class="btn btn-primary" id="event_1_save">Save changes</button>-->
             
             </div>
 	    </div>
@@ -150,13 +141,15 @@
 <!-- Button trigger modal -->
 
   
-  <!-- Modal stats -->
+<!-- Modal stats -->
 <div class="modal fade" id="userProfileModal" tabindex="-1" aria-labelledby="userProfileModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="userProfileModalLabel">Mon score</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
                 <div>
@@ -168,8 +161,59 @@
                 </div>  
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal About -->
+<div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="userProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="userProfileModalLabel">A propos</h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    Bienvenue.
+                    <p></p>Voici 31 défis sobriétés qui te sont proposés par le club climat... Chaque jour, un nouveau défi va apparaitre</p>
+                    <p>Essaye de les mettre en pratique dans ta vie quotidienne, ...</p>
+                    
+                </div>  
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal Reset -->
+<div class="modal fade" id="resetModal" tabindex="-1" aria-labelledby="userProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="userProfileModalLabel">Réinitialiser les données</h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                   
+                    <p>Es-tu certain de vouloir effacer tes données ? </p>
+                   
+                </div>  
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button id="resetConfirmButton" type="button" class="btn btn-secondary" data-dismiss="modal">Oui, efface mes données</button>
             </div>
         </div>
     </div>

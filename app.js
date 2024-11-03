@@ -119,6 +119,9 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
+    //affiche l'a propos
+    $("#aboutModal").modal('show');
+
     //conserve l'ouverture de l'évènement
     $("#event_1").click(function(){
         Cookies.set('event_1_opened', 1, { expires: cookiesDuration });
@@ -150,7 +153,7 @@ $(document).ready(function(){
 
 
 
-    $("#resetButton").click(function(){
+    $("#resetConfirmButton").click(function(){
         resetUserScore();
         
 
@@ -208,15 +211,15 @@ function getuserScore(){
     console.log(userScorePourcent);
 
     //actualise le contenu des stats
-    var mystatsText="Ton score : "+Math.round(userScorePourcent)+" %";
+    var mystatsText=" "+Math.round(userScorePourcent)+" %";
     if(userScorePourcent >= 80){
-        mystatsText+=" <p>Very Well done, you did more than 80%.</p>";
+        mystatsText+=" <p>Ouahh, tu as dépassé 80% des défis.</p>";
     }
     else if(userScorePourcent >= 50){
-        mystatsText+="<p>Well done, you did more than 50%.</p>";
+        mystatsText+="<p>Bien joué, avec tes actions, tu as déjà dépassé 50% des objectifs.</p>";
     }
     else {
-        mystatsText+="<p>Thats poor for the climate.</p>";  
+        mystatsText+="<p>Essaye de faire mieux. </p>";  
     }
 
     
@@ -250,7 +253,7 @@ function makeProgress(num, id){
     //$("#mystats").show();
     setTimeout(function() {
         $("#mystats").show();
-    }, 2000);
+    }, 1000);
     
 
 }
