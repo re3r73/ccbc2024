@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	
+	<title>CodePen - Weekly Challenge</title>
+	<link rel="stylesheet" href="./style.css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+	<script type="text/javascript" src="js-cookie/dist/js.cookie.min.js"></script>
+
+	<script>
+		/*//https://www.w3schools.com/js/js_cookies.asp
+		function setCookie(cname, cvalue, exdays) {
+			const d = new Date();
+			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+			let expires = "expires="+d.toUTCString();
+			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+			}
+
+			function getCookie(cname) {
+			alert('hey');
+				let name = cname + "=";
+				let ca = document.cookie.split(';');
+				for(let i = 0; i < ca.length; i++) {
+					let c = ca[i];
+					while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+					}
+					if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+					}
+				}
+				return "";
+			}
+
+			function checkCookie() {
+			let user = getCookie("username");
+			if (user != "") {
+				alert("Welcome again " + user);
+			} else {
+				user = prompt("Please enter your name:", "");
+				if (user != "" && user != null) {
+				setCookie("username", user, 365);
+				}
+			}
+			} 
+
+		*/
+		//boucle sur toutes les vignettes afin de vérifier si la vignette a déjà été ouverte ou pas.
+		//affiche une image si déjà ouvert.
+		$(document).ready(function(){
+				
+
+				$('.day-frame').each(function() {
+					var id = $(this).attr('id');
+            		console.log(id);
+					console.log(Cookies.get(id+"_opened"));
+					if(Cookies.get(id+"_opened")==="1"){
+						//$(id).css({"background-image": "url('https://plus.unsplash.com/premium_photo-1661380417335-3af4aa7ebe66?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGRvdWNoZXxlbnwwfHwwfHx8MA%3D%3D'"});
+						$(this).css({"background-image": "url('https://plus.unsplash.com/premium_photo-1661380417335-3af4aa7ebe66?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGRvdWNoZXxlbnwwfHwwfHx8MA%3D%3D'"});
+						//console.log(id+"_opened");
+						}
+					else {
+						$(this).css({"background-image": "none"});
+
+
+						}
+				});
+				console.log(document.cookie);
+        	});
+		
+		$(document).ready(function(){
+			//conserve l'ouverture de l'évènement
+			$("#event_1").click(function(){
+				Cookies.set('event_1_opened', 1);
+				//alert("Cookie created");
+
+				$("#event_1").css({"background-image": "url('https://plus.unsplash.com/premium_photo-1661380417335-3af4aa7ebe66?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGRvdWNoZXxlbnwwfHwwfHx8MA%3D%3D'"});
+				//alert(Cookies.get('event_1_opened'));
+				}); 
+			
+			
+				//conserve le niveau de l'évenement
+			$(document).ready(function() {
+				$('input[type=radio][name="event_1_level_flexradio"]').change(function() {
+					
+					Cookies.set('event_1_level', $(this).val());
+					//alert("hey"+Cookies.get('event_1_level')); // ou, utilisez `this.value`
+				});
+			});
+
+			$("#remove_cookies").click(function(){
+				//example cookie ajout dans cookiediv
+				Cookies.remove('event_1_opened');
+		  		}); 
+		  		
+				
+			
+			//example cookie save
+			$("#create_cookie").click(function(){
+				$.cookie('jqcookie', 'Cookie Value');
+				alert(Cookies.get('event_1_level'));
+				}); 
+		  
+		  	//example cookie ajout dans cookiediv
+			  $("#read_cookie").click(function(){
+				
+				alert(Cookies.get('event_1_opened'));
+				}); 
+				  
+				 
+		  
+		});
+	</script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- days sourced from: https://nationaldaycalendar.com/february/ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo&family=Roboto:wght@900&display=swap" rel="stylesheet">
+
+<div id="title" class="center">
+	<h1>Décembre 2024</h1>
+	<p>On s'engage pour le climat à Billom !</a>
+</div>
+<button id="remove_cookies" class="btncls">remove a Cookie event_1_opened</button>
+<button id="create_cookie" class="btncls">Create a Cookie: jqcookie</button>
+<button id="read_cookie" class="btncls">Read Cookie value event_1_opened</button>
+<p><div class="cookiediv">The cookie value is: </div></p>
+</body>
+
+
+
+<div class="calendar-frame center">
+	<div class="day-frame placeholder"></div>
+	<div class="day-frame placeholder"></div>
+	<div class="day-frame placeholder"></div>
+	<div class="day-frame placeholder"></div>
+	<div class="day-frame placeholder"></div>
+	
+	<div class="day-frame center real" id='event_1'>
+		<h2 class="day-number">1</h2>
+		<div class="day-label center"><a  class="btn" data-toggle="modal" data-target="#exampleModal">La douche</a>
+			
+		</div>
+	</div>
+	<div class="day-frame center real" id='event_2'>
+		<h2 class="day-number">2</h2>
+		<div class="day-label center">Je mets un pull</div>
+	</div>
+	<div class="day-frame center real" id='three'>
+		<h2 class="day-number">3</h2>
+		<div class="day-label center">Covoiturage</div>
+	</div>
+	<div class="day-frame center real" id="four">
+		<h2 class="day-number">4</h2>
+		<div class="day-label center">Wear Red Day</div>
+	</div>
+	<div class="day-frame center real" id='five'>
+		<h2 class="day-number">5</h2>
+		<div class="day-label center">Weatherperson's Day</div>
+	</div>
+	<div class="day-frame center real" id='six'>
+		<h2 class="day-number">6</h2>
+		<div class="day-label center">Chopsticks Day</div>
+	</div>
+	<div class="day-frame center real" id='seven'>
+		<h2 class="day-number">7</h2>
+		<div class="day-label center">Periodic Table Day</div>
+	</div>
+	<div class="day-frame center real" id='eight'>
+		<h2 class="day-number">8</h2>
+		<div class="day-label center">Kite Flying Day</div>
+	</div>
+	<div class="day-frame center real" id='nine'>
+		<h2 class="day-number">9</h2>
+		<div class="day-label center">Pizza Day</div>
+	</div>
+	<div class="day-frame center real" id='ten'>
+		<h2 class="day-number">10</h2>
+		<div class="day-label center">Umbrella Day</div>
+	</div>
+	<div class="day-frame center real" id='eleven'>
+		<h2 class="day-number">11</h2>
+		<div class="day-label center">Inventor's Day</div>
+	</div>
+	<div class="day-frame center real" id='twelve'>
+		<h2 class="day-number">12</h2>
+		<div class="day-label center">Global Movie Day</div>
+	</div>
+	<div class="day-frame center real" id='thirteen'>
+		<h2 class="day-number">13</h2>
+		<div class="day-label center">Tortellini Day</div>
+	</div>
+	<div class="day-frame center real" id='fourteen'>
+		<h2 class="day-number">14</h2>
+		<div class="day-label center">Valentine's Day</div>
+	</div>
+	<div class="day-frame center real" id='fifteen'>
+		<h2 class="day-number">15</h2>
+		<div class="day-label center">Gumdrop Day</div>
+	</div>
+	<div class="day-frame center real" id='sixteen'>
+		<h2 class="day-number">16</h2>
+		<div class="day-label center">Do a Grouch a Favor</div>
+	</div>
+	<div class="day-frame center real" id='seventeen'>
+		<h2 class="day-number">17</h2>
+		<div class="day-label center">Cabbage Day</div>
+	</div>
+	<div class="day-frame center real" id='eighteen'>
+		<h2 class="day-number">18</h2>
+		<div class="day-label center">Battery Day</div>
+	</div>
+	<div class="day-frame center real" id='nineteen'>
+		<h2 class="day-number">19</h2>
+		<div class="day-label center">Chocolate Mint Day</div>
+	</div>
+	<div class="day-frame center real" id='twenty'>
+		<h2 class="day-number">20</h2>
+		<div class="day-label center">Love Your Pet Day</div>
+	</div>
+	<div class="day-frame center real" id='twenty-one'>
+		<h2 class="day-number">21</h2>
+		<div class="day-label center">President's Day</div>
+	</div>
+	<div class="day-frame center real" id='twenty-two'>
+		<h2 class="day-number">22</h2>
+		<div class="day-label center">Sweet Potato Day</div>
+	</div>
+	<div class="day-frame center real" id='twenty-three'>
+		<h2 class="day-number">23</h2>
+		<div class="day-label center">Tile Day</div>
+	</div>
+	<div class="day-frame center real" id='twenty-four'>
+		<h2 class="day-number">24</h2>
+		<div class="day-label center">Toast Day</div>
+	</div>
+	<div class="day-frame center real" id='twenty-five'>
+		<h2 class="day-number">25</h2>
+		<div class="day-label center">Clam Chowder Day</div>
+	</div>
+	<div class="day-frame center real" id='twenty-six'>
+		<h2 class="day-number">26</h2>
+		<div class="day-label center">Pistachio Day</div>
+	</div>
+	<div class="day-frame center real" id='twenty-seven'>
+		<h2 class="day-number">27</h2>
+		<div class="day-label center">Polar Bear Day</div>
+	</div>
+	<div class="day-frame center real" id='twenty-eight'>
+		<h2 class="day-number">28</h2>
+		<div class="day-label center">Tooth Fairy Day</div>
+	</div>
+	<div class="day-frame center real" id='twenty-nine'>
+		<h2 class="day-number">29</h2>
+		<div class="day-label center">Tooth Fairy Day</div>
+	</div>
+	<div class="day-frame placeholder"></div>
+	<div class="day-frame placeholder"></div>
+	<div class="day-frame placeholder"></div>
+	<div class="day-frame placeholder"></div>
+	<div class="day-frame placeholder"></div>
+</div>
+<!-- partial -->
+  
+
+<!-- Button trigger modal 
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+	Launch demo modal
+  </button>
+  -->
+  <!-- Modal -->
+  <div class="modal fade modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog " role="document">
+	  <div class="modal-content">
+
+		
+
+		<div class="modal-header">
+		  <h2 class="modal-title" id="exampleModalLabel">La douche</h2>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+							
+								
+			Je dois finir ma douche avant la fin de ma chanson préférée 
+					(Ne pas prendre une chanson de pink flyod) 
+					<ul class="list-group">
+						<li class="list-group-item">
+						  <input class="form-check-input me-1" name="event_1_level_flexradio" type="radio" value="1" aria-label="...">
+						  Niveau 1
+						  <span class="d-block opacity-70">Ma douche dure le temps de ma chanson préférée</span>
+						</li>
+						<li class="list-group-item">
+						  <input class="form-check-input me-1" name="event_1_level_flexradio" type="radio" value="2" aria-label="...">
+						 	Niveau 2
+							 <span class="d-block opacity-70">Ma douche dure moins de 2'30</span>
+						</li>
+						<li class="list-group-item">
+						  <input class="form-check-input me-1" name="event_1_level_flexradio" type="radio" value="3" aria-label="...">
+						 	Niveau 3
+							 <span class="d-block opacity-70">Pas de douche aujourd'hui</span>
+						</li>
+						
+					  </ul>	
+
+
+
+				<p>L'Agence de la transition écologique (Ademe) préconise de privilégier des douches de moins de 5 minutes pour réduire sa facture d'eau et d'énergie. 
+				Nous consommons en moyenne 150 litres d’eau par jour et par personne.
+				Au-delà de 5 mn s'éterniser sous la douche reviendrait à consommer autant d'eau que pour un bain. Et pourtant, la majorité des individus s'éterniserait au-delà de cette durée : un sondage réalisé par BVA-Doméo en 2015 faisait état d'une durée de 9 minutes en moyenne pour les Français… (source Ademe)
+				</p>
+				<p>
+				La salle de bain = 1er poste 
+				de consommation d’eau de la maison
+				</p>
+
+			</div>
+			
+
+
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary" id="event_1_save">Save changes</button>
+		  <a href="#" class="btn btn-info" role="button" id="event_1_save_a">Link Button</a>
+		</div>
+	  </div>
+	</div>
+  </div>
+</div>
+</body>
+</html>

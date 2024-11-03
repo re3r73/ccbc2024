@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	
+	<title>CodePen - Weekly Challenge</title>
+	
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!--enlever jqueryslim si  json-->
+   	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- animate bootstrap progress bar, enlever les duplicata (jquery)-->
+    <link href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" /> 
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script> 
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+    <script src= "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"> </script> 
+
+	<script type="text/javascript" src="js-cookie/dist/js.cookie.min.js"></script>
+    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" href="./style.css">
+	<script>
+		
+        
+        
+	</script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- days sourced from: https://nationaldaycalendar.com/february/ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo&family=Roboto:wght@900&display=swap" rel="stylesheet">
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">CCBC 2024</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-link">
+          <a  href="#">Home </a>
+        </li>
+        <li class="nav-link">
+              <a  id="showProgress" class="dropdown-item" href="#" data-toggle="modal" data-target="#userProfileModal">Mon score</a>
+        </li>
+        <li class="nav-link">
+            <a id="resetButton" class="dropdown-item" href="#">Reset</a>
+        </li>
+        <li class="nav-link">
+            <a class="dropdown-item" href="#">A propos</a>
+        </li>
+        <!--<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown link
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            
+            
+            
+          </div>
+        </li>-->
+      </ul>
+    </div>
+  </nav>
+
+
+ 
+
+
+
+
+
+
+<div id="title" class="center">
+	<h1>Décembre 2024</h1>
+	<p>On s'engage pour le climat à Billom !</a>
+</div>
+<!--
+<button id="remove_cookies" class="btncls">remove a Cookie event_1_opened</button>
+<button id="create_cookie" class="btncls">Create a Cookie: jqcookie</button>
+<button id="read_cookie" class="btncls">Read Cookie value event_1_opened</button>
+<p><div class="cookiediv">The cookie value is: </div></p>
+-->
+
+
+
+
+<div id="calendar-frame" class="calendar-frame center">
+	
+</div>
+
+  
+  
+ <!-- Modal event-->
+<div class="modal fade modal-lg bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"  aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+	    <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="eventModalTitle">La douche</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="eventModalDescription1">Je dois finir ma douche avant la fin de ma chanson préférée 
+                        (Ne pas prendre une chanson de pink flyod) 
+                </p>				
+                                    
+                
+                <ul class="list-group" id="eventModal-list-group-item">
+                    <li class="list-group-item">
+                    <input class="form-check-input me-1" name="event_1_level_flexradio" type="radio" value="1" aria-label="...">
+                    Niveau 1
+                    <span class="d-block opacity-70" id="eventModalLevel1">Ma douche dure le temps de ma chanson préférée</span>
+                    </li>
+                    <li class="list-group-item">
+                    <input class="form-check-input me-1" name="event_1_level_flexradio" type="radio" value="2" aria-label="...">
+                        Niveau 2
+                        <span class="d-block opacity-70" id="eventModalLevel2">Ma douche dure moins de 2'30</span>
+                    </li>
+                    <li class="list-group-item">
+                    <input class="form-check-input me-1" name="event_1_level_flexradio" type="radio" value="3" aria-label="...">
+                        Niveau 3
+                        <span class="d-block opacity-70" id="eventModalLevel3">Pas de douche aujourd'hui</span>
+                    </li>
+                    
+                </ul>	
+
+
+
+                <p id="eventModalDescription2"></p>
+            
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="event_1_save">Save changes</button>
+            
+            </div>
+	    </div>
+	</div>
+</div>
+
+
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal stats -->
+<div class="modal fade" id="userProfileModal" tabindex="-1" aria-labelledby="userProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="userProfileModalLabel">Mon score</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="progress">
+                        <div id="myprogress-bar" class="progress-bar" role="progressbar"><span class="sr-only">60% Complete</span></div>
+                        
+                    </div>
+                    <div id="mystats" class="alert alert-success" role="alert">Well done! You successfully connected. </div>
+                </div>  
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
