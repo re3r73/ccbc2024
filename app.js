@@ -80,20 +80,22 @@ $(document).ready(function(){
                 </li>
             */
             $(".list-group-item").remove();
-            
+            console.info('inputCheckedvel1'+inputChecked(id,1));
+            console.info('inputCheckedvel1'+inputChecked(id,2));
+            console.info('inputCheckedvel1'+inputChecked(id,3));
             $('#eventModal-list-group-item').append(
                 $('<li class="list-group-item">').append(
-                    $('<input class="form-check-input me-1" name="event_'+id+'_level_flexradio" type="radio" value="1" aria-label="...">Niveau 1<span class="d-block opacity-70" >'+getEvent(id,"level1")+'</span>')
+                    $('<input class="form-check-input me-1" name="event_'+id+'_level_flexradio" type="radio" value="1" aria-label="..." '+inputChecked(id,1)+'>Niveau 1<span class="d-block opacity-70" >'+getEvent(id,"level1")+'</span>')
                 ));
             
             $('#eventModal-list-group-item').append(
                 $('<li class="list-group-item">').append(
-                    $('<input class="form-check-input me-1" name="event_'+id+'_level_flexradio" type="radio" value="2" aria-label="...">Niveau 2<span class="d-block opacity-70" >'+getEvent(id,"level2")+'</span>')
+                    $('<input class="form-check-input me-1" name="event_'+id+'_level_flexradio" type="radio" value="2" aria-label="..." '+inputChecked(id,2)+'>Niveau 2<span class="d-block opacity-70" >'+getEvent(id,"level2")+'</span>')
                 ));
             
             $('#eventModal-list-group-item').append(
                 $('<li class="list-group-item">').append(
-                    $('<input class="form-check-input me-1" name="event_'+id+'_level_flexradio" type="radio" value="3" aria-label="...">Niveau 3<span class="d-block opacity-70" >'+getEvent(id,"level3")+'</span>')
+                    $('<input class="form-check-input me-1" name="event_'+id+'_level_flexradio" type="radio" value="3" aria-label="..." '+inputChecked(id,3)+'>Niveau 3<span class="d-block opacity-70" >'+getEvent(id,"level3")+'</span>')
                 ));
             
                 
@@ -163,6 +165,13 @@ $(document).ready(function(){
          
   
 });
+//retourne checked si le cookie event_id_leved
+function inputChecked(id,level){
+    var checked="";
+    if(Cookies.get('event_'+id+'_level')==level) {checked="checked"}
+    return checked;
+
+}
 
 function getMax(arr, prop) {
     var max;
