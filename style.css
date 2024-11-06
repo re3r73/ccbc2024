@@ -1,4 +1,8 @@
-
+/*
+unité en vw : 
+100vw = 100% de la largeur de la fenêtre d'affichage 1vw = 1% de la largeur de la fenêtre d'affichage 
+100vh = 100% de la hauteur de la fenêtre d'affichage 1vh = 1% de la hauteur de la fenêtre
+*/
 
 
 /*html { font-size: 1.5vw; }*/
@@ -34,7 +38,7 @@
 }
 .calendar-frame {
 	padding: var(--dim2);
-	width: 84vw;
+	width: 100vw;
 	margin: auto;
 	flex-wrap: wrap;
 }
@@ -88,6 +92,41 @@
 	color: rgba(0, 0, 0, 0);
 	text-shadow: 0 0 10vw rgba(0, 0, 0, 0);
 }
+
+
+/*Palette de couleur 
+https://www.palettedecouleur.net/?utm_source=Graphiste&utm_medium=blog&utm_campaign=outils-gratuits-palette/
+#317AC1 blue
+#E1A624 orange
+#384454 bluedark
+#D4D3DC grey
+#AD956B brown
+
+*/
+
+/*couleur symbole de l'eau*/
+.category1{
+	background-color: #317AC1;
+}
+/*couleur symbole de l'énergie*/
+.category2{
+	background-color: #E1A624;
+}
+/*couleur symbole de la mobilité*/
+.category3{
+	background-color: #384454;
+}
+
+/*couleur symbole de la */
+.category4{
+	background-color: #D4D3DC;
+}
+
+/*couleur symbole de la */
+.category5{
+	background-color: #AD956B;
+}
+
 .center {
 	display: flex;
 	align-items: left;

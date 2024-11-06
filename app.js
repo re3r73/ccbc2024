@@ -27,7 +27,7 @@ $(document).ready(function(){
     //Affiche toutes les vignettes de la base event
     $.each(event, function (index, event) {
                     
-        $('#calendar-frame').append('<div class="day-frame center real" id="'+event.id+'"></div>');
+        $('#calendar-frame').append('<div class="day-frame center real category'+ getEvent(event.id,'category')+'" id="'+event.id+'"></div>');
         $('#'+event.id+'').append('<h2 class="day-number">'+event.id+'</h2><div class="day-label center"><a class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">'+event.title+'</a></div>');
         
         
@@ -55,6 +55,7 @@ $(document).ready(function(){
             }
         else {
             $(this).css({"background-image": "none"});
+            
             }
 
         

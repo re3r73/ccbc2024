@@ -3,7 +3,7 @@ var event = [
         
     "id":"1",
     "date":"...",
-    "category":"eau",
+    "category":"1",
     "title":"La douche",
     "level1":"Ma douche dure le temps de ma chanson préférée.",
     "level2":"Ma douche dure moins de 2'30.",
@@ -17,7 +17,7 @@ var event = [
         
     "id":"2",
     "date":"...",
-    "category":"eau",
+    "category":"1",
     "title":"Les cowboys boivent de l’eau",
     "level1":"petit defi2",
     "level2":"moeyn defi2",
@@ -31,7 +31,7 @@ var event = [
         
         "id":"3",
         "date":"...",
-        "category":"énergie",
+        "category":"2",
         "title":"Je mets un pull",
         "level1":"A 19°C dans les pièces à vivre et 17°C dans les chambres",
         "level2":"A 18°C dans les pièces à vivre et 16°C dans les chambres",
@@ -47,7 +47,7 @@ var event = [
         
             "id":"4",
             "date":"...",
-            "category":"eau",
+            "category":"1",
             "title":"Titre",
             "level1":"petit defi",
             "level2":"moyen defi",
@@ -61,7 +61,7 @@ var event = [
                 
             "id":"5",
             "date":"...",
-            "category":"eau",
+            "category":"1",
             "title":"Titre",
             "level1":"petit defi",
             "level2":"moyen defi",
@@ -75,7 +75,7 @@ var event = [
                 
             "id":"6",
             "date":"...",
-            "category":"énergie",
+            "category":"2",
             "title":"Titre",
             "level1":"petit defi",
             "level2":"moyen defi",
@@ -89,7 +89,7 @@ var event = [
                 
             "id":"7",
             "date":"...",
-            "category":"énergie",
+            "category":"2",
             "title":"Titre",
             "level1":"petit defi",
             "level2":"moyen defi",
@@ -103,6 +103,7 @@ var event = [
             
                 "id":"8",
                 "date":"...",
+                "category":"3",
                 "title":"Titre",
                 "level1":"petit defi",
                 "level2":"moyen defi",
